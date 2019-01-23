@@ -18,7 +18,7 @@ FileUtils.mkdir(title)
 input_filenames = []
 files = []
 index.search("#thumbnail-container .thumb-container a noscript img").each do |tb|
-  img = tb[:src].gsub(/t\.nhentai/, 'i.nhentai').gsub(/(\d+)t\.jpg$/, '\1.jpg')
+  img = tb[:src].gsub(/t\.nhentai/, 'i.nhentai').gsub(/(\d+)t\.(jpg|png)$/, '\1.\2')
   puts img
   basename = File.basename(img)
   input_filenames << basename
